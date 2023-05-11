@@ -17,19 +17,17 @@ const Basket = () => {
 
   const decreaseCount = (id: any) => {
     let item: any = favorites.find((pr: any) => pr.id === id);
-    item.count++;
+    if(item.count>0){item.count--;}
     setFavorites([...favorites]);
   };
 
   const increaseCount = (id: any) => {
     let item: any = favorites.find((pr: any) => pr.id === id);
 
-    if (item.count > 1) {
-      item.count--;
+    
+      item.count++;
       setFavorites([...favorites]);
-    } else {
-      console.log('Hello');
-    }
+   
   };
 
   const deleteAllFavorites = () => {

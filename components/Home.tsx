@@ -20,7 +20,7 @@ const Home = ({ navigation }: any) => {
     return (
       <TouchableOpacity onPress={() => navigation.navigate('Detail', { id: item.id })} style={styles.itemContainer}>
         <Text style={styles.title}>{item.title}</Text>
-        <Image source={{ uri: item.image }} style={styles.image} />
+        <Image source={{ uri: item.image || "" }} style={styles.image} />
         <Text style={styles.price}>${item.price}</Text>
       </TouchableOpacity>
     );
